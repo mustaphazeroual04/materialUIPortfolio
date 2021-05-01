@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => {
         menuSliderContainer: {
         width : 250,
         backgroundColor : "#511",
-        height : '30rem'
+        height : '100%'
         },
         avatar : {
             
@@ -72,7 +72,7 @@ const NavBar = () => {
     const classes = useStyles();
     const sideList = (slider) => (
 
-            <Box className={classes.menuSliderContainer} component="div">
+            <Box onClick={() => {togglerSlider(false);}} className={classes.menuSliderContainer} component="div">
                 <Avatar className={classes.avatar} src={avatar} alt="Hero" ></Avatar>
                 <Divider></Divider>
                 <List>
@@ -101,7 +101,7 @@ const NavBar = () => {
                         <Typography variant="h5" style={{color:"tan"}}>
                             Portfolio
                         </Typography>
-                        <Drawer anchor="right" open={state.right}>
+                        <Drawer anchor="right" open={state.right} onClose={() => {togglerSlider(false);}}>
                             {sideList("right")}
                         </Drawer> 
                     </Toolbar>
