@@ -17,7 +17,8 @@ import {
     ContactMail 
 } from '@material-ui/icons';
 import avatar from '../avatar.png'; 
-import  Drawer from '@material-ui/core/Drawer'
+import  Drawer from '@material-ui/core/Drawer';
+import {Link} from 'react-router-dom';
 
 // CSS Styles
 const useStyles = makeStyles((theme) => {
@@ -44,19 +45,23 @@ const useStyles = makeStyles((theme) => {
 const menuItems = [
     {
         itemComponent: <Home />,
-        itemText : "Home"
+        itemText : "Home",
+        path : "/",
     },
     {
         itemComponent: <AssignmentInd />,
-        itemText : "Resume "
+        itemText : "Resume ",
+        path: "/resume"
     },
     {
         itemComponent: <Apps />,
-        itemText : "Portfolio"
+        itemText : "Portfolio",
+        path: "/portfolio"
     },
     {
         itemComponent: <ContactMail />,
-        itemText : "Contact"
+        itemText : "Contact",
+        path: "/contact"
     },
 ]
 
@@ -79,7 +84,7 @@ const NavBar = () => {
                 {menuItems.map((item, key) => {
                     return (
 
-                    <ListItem button key={key}>
+                    <ListItem button component={Link} to={item.path} key={key}>
                         <ListItemIcon className={classes.tanColor}>
                             {item.itemComponent}
                         </ListItemIcon>

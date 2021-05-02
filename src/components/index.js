@@ -3,10 +3,13 @@ import NavBar from './NavBar';
 import Header from './header';
 import Particles from 'react-particles-js';
 import {makeStyles} from '@material-ui/styles';
+import Resume from './Resume';
+
 
 const usestyles = makeStyles((theme) => ({
     particlesCanva : {
-        position: "absolute"
+        position: "absolute",
+        opacity : 0.3
     }
 }));
 
